@@ -1,0 +1,18 @@
+Сервер:  UnKnown
+Address:  10.251.151.27
+
+_mongodb._tcp.cluster0.e0flb3h.mongodb.net	SRV service location:
+	  priority       = 0
+	  weight         = 0
+	  port           = 27017
+	  svr hostname   = ac-2tyw3kt-shard-00-00.e0flb3h.mongodb.net
+_mongodb._tcp.cluster0.e0flb3h.mongodb.net	SRV service location:
+	  priority       = 0
+	  weight         = 0
+	  port           = 27017
+	  svr hostname   = ac-2tyw3kt-shard-00-01.e0flb3h.mongodb.net
+_mongodb._tcp.cluster0.e0flb3h.mongodb.net	SRV service location:
+	  priority       = 0
+	  weight         = 0
+	  port           = 27017
+	  svr hostname   = ac-2tyw3kt-shard-00-02.e0flb3h.mongodb.net
