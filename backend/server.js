@@ -26,7 +26,20 @@ if (!fs.existsSync(usersPath)) {
 // Note: Frontend proxy rewrites /api/users to /users
 app.use("/users", userRoutes);
 
-// Root route
+// Serve Static Files from Frontend
+const frontendDist = path.join(__dirname, "../frontend/dist");
+if (fs.existsSync(frontendDist)) {
+  app.use(express.static(frontendDist));
+  // All other routes handle by frontend's index.html
+  app.get("*", (req, res, next) => {
+    if (req.originalUrl.startsWith("/api") || req.originalUrl.startsWith("/users")) {
+      return next();
+    }
+    res.sendFile(path.join(frontendDist, "index.html"));
+  });
+}
+
+// Root route (legacy, will be overridden by static files if built)
 app.get("/", (req, res) => {
   res.send("Smart User System (Local JSON Mode) is running...");
 });
